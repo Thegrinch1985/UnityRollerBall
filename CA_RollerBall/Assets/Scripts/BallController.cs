@@ -80,6 +80,7 @@ public class BallController : MonoBehaviour
 
         }
     }
+    
       void setCountText (){
     countText.text = "Count: " + count.ToString ();
     if(count >= 5){
