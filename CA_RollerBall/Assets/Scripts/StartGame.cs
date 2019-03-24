@@ -16,9 +16,17 @@ public class StartGame : MonoBehaviour
     {
         timeLeft -= Time.deltaTime;
         startText.text = (timeLeft).ToString("0");
-        if (timeLeft < 0)
+        if (timeLeft <= 0)
         {
-            //Do something useful or Load a new game scene depending on your use-case
+         GameOver();
         }
     }
+     void GameOver()
+{
+    SceneManager.LoadScene("GameOver"); // it will reload ur scene, probably this will work as a game restart for your project, you should do some better "game ending thingy" tho
 }
+}
+
+
+
+

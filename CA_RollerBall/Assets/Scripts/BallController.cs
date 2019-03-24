@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 { public float rotationSpeed = 100f;
@@ -42,6 +43,7 @@ public class BallController : MonoBehaviour
         {
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
         }
+     
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
@@ -80,13 +82,16 @@ public class BallController : MonoBehaviour
 
         }
     }
-    
       void setCountText (){
     countText.text = "Count: " + count.ToString ();
-    if(count >= 5){
+    if(count == 12){
 
-        winText.text = "You Win";
+       win();
     }
+    }
+    void win(){
+
+       SceneManager.LoadScene("Win");
     }
   
 }
